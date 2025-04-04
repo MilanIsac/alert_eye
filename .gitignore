@@ -1,0 +1,92 @@
+/client
+├── /public
+│   ├── index.html
+│   ├── favicon.ico
+│   └── manifest.json
+├── /src
+│   ├── /assets
+│   │   ├── logo.png
+│   │   └── icons
+│   ├── /components
+│   │   ├── LiveFeed
+│   │   │   ├── LiveFeed.js
+│   │   │   └── LiveFeed.css
+│   │   ├── MapView
+│   │   │   ├── MapView.js
+│   │   │   └── MapView.css
+│   │   ├── AlertList
+│   │   │   ├── AlertList.js
+│   │   │   └── AlertList.css
+│   │   ├── ApprovalPanel
+│   │   │   ├── ApprovalPanel.js
+│   │   │   └── ApprovalPanel.css
+│   │   └── AnalyticsChart
+│   │       ├── AnalyticsChart.js
+│   │       └── AnalyticsChart.css
+│   ├── /pages
+│   │   ├── Login
+│   │   │   ├── Login.js
+│   │   │   └── Login.css
+│   │   ├── Signup
+│   │   │   ├── Signup.js
+│   │   │   └── Signup.css
+│   │   └── Dashboard
+│   │       ├── Dashboard.js
+│   │       └── Dashboard.css
+│   ├── /utils
+│   │   ├── api.js
+│   │   └── auth.js
+│   ├── App.js
+│   ├── index.js
+│   └── styles.css
+├── .env
+├── .gitignore
+└── package.json
+
+
+
+
+/server
+├── /config
+│   ├── db.js
+├── /controllers
+│   ├── authController.js
+│   ├── alertController.js
+│   └── streamController.js
+├── /models
+│   ├── User.js
+│   ├── Camera.js
+│   └── Alert.js
+├── /routes
+│   ├── auth.js
+│   ├── alerts.js
+│   └── stream.js
+├── /services
+│   ├── notification.js  # Nodemailer, Twilio, FCM
+│   └── mlClient.js      # NEW: Python ML service se communication
+├── /utils
+│   ├── jwt.js
+│   └── ffmpeg.js
+├── server.js
+├── .env
+├── .gitignore
+└── package.json
+
+
+
+/ml
+├── /data                # Training data
+│   ├── /youtube        # YouTube videos
+│   └── /cctv           # CCTV footage (real ya simulated)
+├── /models             # Trained models
+│   └── disaster_model  # Saved model folder
+│       ├── model.h5    # TensorFlow model
+│       └── config.json # Model config (optional)
+├── /src                # Python source code
+│   ├── train.py        # Model training script
+│   ├── predict.py      # Real-time prediction script
+│   ├── preprocess.py   # Data augmentation/preprocessing
+│   └── app.py          # Flask/FastAPI server for ML API
+├── requirements.txt    # Python dependencies (tensorflow, flask, etc.)
+├── .env                # ML service env vars (e.g., port)
+└── README.md           # ML service docs

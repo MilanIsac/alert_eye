@@ -1,0 +1,28 @@
+.container2{
+    background-color: white;
+    width: 325px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+    border: none;
+    height: 380px;
+    background-color: rgb(210, 252, 254);
+}
+.hr-line{
+    width: 70%;
+}
+.signup-username{
+    margin-top: 15px;
+}
+.signup-submit{
+    margin-top: 10px;
+    padding: 8px;
+    width: 100px;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    margin-left: 95px;
+}

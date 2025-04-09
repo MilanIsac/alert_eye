@@ -121,5 +121,6 @@ dist
 .file.txt
 data/
 node_modules/
+venv/
 
 # End of https://mrkandreev.name/snippets/gitignore-generator/#Node,npm,python

@@ -1,0 +1,94 @@
+/DisasterSense
+├── /client              # Frontend (React) - Website for all users
+│   ├── /public
+│   │   ├── index.html
+│   │   ├── favicon.ico  # Custom disaster icon (e.g., red triangle)
+│   │   └── manifest.json
+│   ├── /src
+│   │   ├── /assets
+│   │   │   ├── logo.png
+│   │   │   └── icons
+│   │   ├── /components
+│   │   │   ├── LiveFeed
+│   │   │   │   ├── LiveFeed.js      # Live CCTV stream component
+│   │   │   │   └── LiveFeed.css
+│   │   │   ├── MapView
+│   │   │   │   ├── MapView.js       # Interactive map for disaster locations
+│   │   │   │   └── MapView.css
+│   │   │   ├── AlertList
+│   │   │   │   ├── AlertList.js    # Displays all alerts (for officials + public view)
+│   │   │   │   └── AlertList.css
+│   │   │   └── AnalyticsChart
+│   │   │       ├── AnalyticsChart.js # Analytics visuals
+│   │   │       └── AnalyticsChart.css
+│   │   ├── /pages
+│   │   │   ├── Login
+│   │   │   │   ├── Login.js        # Login page for officials
+│   │   │   │   └── Login.css
+│   │   │   ├── Signup
+│   │   │   │   ├── Signup.js       # Signup page for officials
+│   │   │   │   └── Signup.css
+│   │   │   └── Dashboard
+│   │   │       ├── Dashboard.js    # Main dashboard (officials ke liye)
+│   │   │       └── Dashboard.css
+│   │   ├── /utils
+│   │   │   ├── api.js              # Axios API calls to backend
+│   │   │   └── auth.js             # JWT handling
+│   │   ├── App.js                  # Main app component
+│   │   ├── index.js                # Entry point
+│   │   └── styles.css              # Global CSS
+│   ├── .env                        # Frontend env vars (e.g., API URL)
+│   ├── .gitignore
+│   └── package.json                # React dependencies
+
+├── /server              # Backend (Node.js) - API-only
+│   ├── /config
+│   │   ├── db.js                   # MongoDB connection
+│   │   └── env.js                  # Optional env config
+│   ├── /controllers
+│   │   ├── authController.js       # Auth logic
+│   │   ├── alertController.js      # Alert logic (notifications to officials)
+│   │   └── streamController.js     # Streaming logic
+│   ├── /models
+│   │   ├── User.js                 # User schema (officials)
+│   │   ├── Camera.js               # CCTV camera schema
+│   │   └── Alert.js                # Alert schema
+│   ├── /routes
+│   │   ├── auth.js                 # Auth API endpoints
+│   │   ├── alerts.js               # Alert API endpoints
+│   │   └── stream.js               # Streaming API endpoints
+│   ├── /services
+│   │   ├── notification.js         # SMS/Email (officials only)
+│   │   └── mlClient.js             # Python ML service communication
+│   ├── /utils
+│   │   ├── jwt.js                  # JWT middleware
+│   │   └── ffmpeg.js               # Video processing
+│   ├── server.js                   # Main server file
+│   ├── .env                        # Backend env vars
+│   ├── .gitignore
+│   └── package.json                # Node.js dependencies
+
+├── /ml                  # ML (Python) - Disaster Detection
+│   ├── /data
+│   │   ├── /youtube               # Training data (YouTube)
+│   │   └── /cctv                  # Training data (CCTV)
+│   ├── /models
+│   │   └── disaster_model
+│   │       ├── model.h5           # Trained TensorFlow model
+│   │       └── config.json        # Model config
+│   ├── /src
+│   │   ├── train.py               # Model training script
+│   │   ├── predict.py             # Prediction script
+│   │   ├── preprocess.py          # Data preprocessing
+│   │   └── app.py                 # Flask API for ML
+│   ├── requirements.txt           # Python dependencies
+│   ├── .env                       # ML env vars (e.g., port)
+│   └── README.md                  # ML docs
+
+
+
+
+https://www.youtube.com/watch?v=M8H5AqxpThU
+
+
+E:\All projects\alert_eye\ml> yt-dlp -o "E:\All projects\alert_eye\ml\data\youtube\flood\flood_video1.mp4" "https://www.youtube.com/shorts/JVjGdZB_CJc"

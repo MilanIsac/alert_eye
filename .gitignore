@@ -119,5 +119,6 @@ dist
 
 
 .file.txt
+.data
 
 # End of https://mrkandreev.name/snippets/gitignore-generator/#Node,npm,python

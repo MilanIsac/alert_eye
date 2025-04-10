@@ -87,12 +87,63 @@
 
 
 
+earthquake
+https://www.youtube.com/watch?v=M8H5AqxpThU //
+https://www.youtube.com/shorts/yNi75Faa_Bw //
+https://www.youtube.com/watch?v=ztomG0y8XtQ //
+https://www.youtube.com/watch?v=m9RF5eRdG9c //
+https://www.youtube.com/shorts/zF3NvjxKPdk //
+https://www.youtube.com/watch?v=oWzdgBNfhQU //
+https://www.youtube.com/watch?v=EcjI943z1u4 //
+https://www.youtube.com/watch?v=e7ho6z32yyo //
+https://www.youtube.com/watch?v=psFhL-WmHd4
+https://www.youtube.com/shorts/gpC68A4nqN4
+https://www.youtube.com/watch?v=qDZiF2T2B5w
 
-https://www.youtube.com/watch?v=M8H5AqxpThU
-https://www.youtube.com/shorts/yNi75Faa_Bw
+yt-dlp -o "E:\All projects\alert_eye\ml\data\youtube\earthquake\earthquake_video11.mp4" "https://www.youtube.com/watch?v=qDZiF2T2B5w"
 
-E:\All projects\alert_eye\ml> yt-dlp -o "E:\All projects\alert_eye\ml\data\youtube\flood\flood_video1.mp4" "https://www.youtube.com/shorts/JVjGdZB_CJc"
 
-https://www.youtube.com/watch?v=nss1ZJiBmZM
+flood
+https://www.youtube.com/watch?v=nss1ZJiBmZM //
 https://www.youtube.com/shorts/elDKQR31fBE
-https://www.youtube.com/shorts/pweHouzjA9Y
+https://www.youtube.com/shorts/pweHouzjA9Y //
+https://www.youtube.com/watch?v=RNqQUoX26RY //
+https://www.youtube.com/shorts/eJPgOIvbI5A //
+https://www.youtube.com/shorts/jEN8wGgNaJc //
+https://www.youtube.com/shorts/bNJJGrWjbMc //
+https://www.youtube.com/watch?v=al8yTiCVfro //
+https://www.youtube.com/watch?v=u0-FLuwWhf4
+https://www.youtube.com/watch?v=8MRwKZ4thGM
+https://www.youtube.com/shorts/kVFNFWxjNHQ
+
+
+tsunami
+https://www.youtube.com/watch?v=RNqQUoX26RY
+https://www.youtube.com/watch?v=iSOdNTnkKu0
+https://www.youtube.com/watch?v=3618dZoiaPE
+https://www.youtube.com/watch?v=k_5-IF5cAvA
+https://www.youtube.com/watch?v=oWzdgBNfhQU
+https://www.youtube.com/shorts/UKFjxbDvf5w
+https://www.youtube.com/shorts/EjextZ_8YlY
+https://www.youtube.com/shorts/asNPjH-4r_M
+https://www.youtube.com/shorts/TMyqC2ZIjhI
+https://www.youtube.com/shorts/alJINfLHLgg
+https://www.youtube.com/shorts/lAsSRicWWFI
+https://www.youtube.com/shorts/nMfZmxHiTfg
+
+
+yt-dlp -o "E:\All projects\alert_eye\ml\data\youtube\landslide\landslide_video12.mp4" "https://www.youtube.com/shorts/UoII34c-WAU"
+
+landslide
+https://www.youtube.com/shorts/InCBrtpOOac
+https://www.youtube.com/shorts/BpN5AOErcdc
+https://www.youtube.com/shorts/lDNNEAnfir8
+https://www.youtube.com/shorts/BR_PxkuHjkQ
+https://www.youtube.com/shorts/dTUHsZokVLw
+https://www.youtube.com/shorts/m6VBXxrlhR0
+https://www.youtube.com/shorts/T-vz5Pg3CLI
+https://www.youtube.com/shorts/Cyf79Onrqsw
+https://www.youtube.com/shorts/J_ahpsOroLw
+https://www.youtube.com/shorts/9w_hp30Clus
+https://www.youtube.com/shorts/QRvsAbRr_Ig
+https://www.youtube.com/shorts/UoII34c-WAU

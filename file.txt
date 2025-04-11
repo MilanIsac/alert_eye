@@ -87,6 +87,31 @@
 
 
 
+
+
+normal videos
+https://www.youtube.com/watch?v=edGIiCG97jE
+https://www.youtube.com/watch?v=CftLBPI1Ga4
+https://www.youtube.com/watch?v=l6EzZafb1Pk
+https://www.youtube.com/watch?v=TEjHDF9QXTY
+
+
+
+
+https://www.youtube.com/watch?v=j6guAVYv1KA
+https://www.youtube.com/watch?v=M00dzL786RI
+https://www.youtube.com/watch?v=nNjYd1Qh1Ws
+
+yt-dlp -o "E:\All projects\alert_eye\ml\data\youtube\normal\normal_video13.mp4" "https://www.youtube.com/shorts/V7hRIHB2QeI"
+
+
+https://www.youtube.com/shorts/jbdZ8xCoK9g
+https://www.youtube.com/watch?v=35npVaFGHMY
+https://www.youtube.com/shorts/qtMp1JXYyvo
+https://www.youtube.com/shorts/IuC6CD94s9Y
+https://www.youtube.com/shorts/V7hRIHB2QeI
+
+
 earthquake
 https://www.youtube.com/watch?v=M8H5AqxpThU //
 https://www.youtube.com/shorts/yNi75Faa_Bw //
@@ -100,7 +125,6 @@ https://www.youtube.com/watch?v=psFhL-WmHd4
 https://www.youtube.com/shorts/gpC68A4nqN4
 https://www.youtube.com/watch?v=qDZiF2T2B5w
 
-yt-dlp -o "E:\All projects\alert_eye\ml\data\youtube\earthquake\earthquake_video11.mp4" "https://www.youtube.com/watch?v=qDZiF2T2B5w"
 
 
 flood

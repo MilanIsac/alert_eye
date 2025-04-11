@@ -1,5 +1,6 @@
-tensorflow==2.17.0
+tensorflow==2.19.0
+numpy==1.26.4
 opencv-python==4.10.0.84
 fastapi==0.115.3
-uvicorn==0.32.0  # FastAPI server ke liye
-numpy==1.26.4
+uvicorn==0.32.0
+yt-dlp

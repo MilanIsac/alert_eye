@@ -123,6 +123,7 @@ data/
 node_modules/
 venv/
 ml/venv/
+ml/models/
 
 # End of https://mrkandreev.name/snippets/gitignore-generator/#Node,npm,python
 server/.env

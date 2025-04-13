@@ -24,7 +24,7 @@ if __name__ == "__main__":
         for video_file in os.listdir(video_dir):
             if video_file.endswith(".mp4"):
                 video_path = os.path.join(video_dir, video_file)
-                output_path = os.path.join(f"../data/processed {disaster}")
+                output_path = os.path.join(f"../data/processed_{disaster}")
                 extract_frames(video_path, output_path)
     print(f"Frames extracted for {disaster} videos.")
             

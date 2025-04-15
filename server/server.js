@@ -4,18 +4,17 @@ const express = require("express");
 const mongoose = require("mongoose");
 const { connectDB } = require("./config/db.config.js");
 
-// const authRoutes = require("./routes/auth.routes.js");
-// const alertRoutes = require("./routes/alerts.routes.js");
-// const streamRoutes = require("./routes/stream.routes.js");
-
+const authRoutes = require("./routes/auth.routes.js");
+const alertRoutes = require("./routes/alerts.routes.js");
+const streamRoutes = require("./routes/stream.routes.js");
 
 const app = express();
 
 
 
-// app.use("/api/auth", authRoutes);
-// app.use("/api/alert", alertRoutes);
-// app.use("/api/stream", streamRoutes);
+app.use("/auth", authRoutes);
+app.use("/alert", alertRoutes);
+app.use("/streams", streamRoutes);
 
 connectDB()
     .then(() => {

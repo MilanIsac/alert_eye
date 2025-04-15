@@ -1,9 +1,12 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const streamController = require("../controllers/streamController");
-const {authenticate} = require("../utils/jwt");
+const streamController = require('../controllers/streamController');
+const jwt = require('../utils/jwt');
 
-// Get live CCTV url
-router.get("/live/:cameraId", authenticate, streamController.getLiveStream);
+// Middleware to verify JWT token
+const authenticate = jwt.verifyToken;
+
+router.post('/streams/start', authenticate, streamController.startStream);
+router.post('/streams/stop', authenticate, streamController.stopStream);
 
 module.exports = router;

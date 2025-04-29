@@ -1,4 +1,4 @@
-const MLClient = require("../services/mlClient");
+const MLClient = require("../services/mlClient.services");
 
 async function processCameraFree(req, res) {
     try {

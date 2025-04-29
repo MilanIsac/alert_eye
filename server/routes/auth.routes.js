@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const authController = require('../controllers/authController');
-const jwt = require('../utils/jwt');
+const authController = require("../controllers/auth.controllers.js")
+const jwt = require('../utils/jwt.utils.js');
 
 // Signup
 router.post("/signup", authController.signup);

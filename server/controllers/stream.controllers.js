@@ -1,7 +1,7 @@
-const Camera = require('../models/Camera');
-const MLClient = require('../services/mlClient');
+const Camera = require("../models/camera.models");
+const MLClient = require('../services/mlClient.services');
 const { spawn } = require('child_process');
-const ffmpeg = require('../utils/ffmpeg');
+const ffmpeg = require("../utils/ffmpeg.utils");
 
 exports.startStream = async (req, res) => {
   try {

@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 
 exports.signup = async(req, res) => {
     try {
-        const { username, password, role } = req.body;
+        const { username, password, phoneNumber, email } = req.body;
         const existingUser = await User.findOne({ username });
         if(username){
             return res.status(400).json({ error : "User already exists" });
@@ -14,7 +14,8 @@ exports.signup = async(req, res) => {
         const user = new User({
             username,
             password : hashed_password,
-            role
+            phoneNumber,
+            email
         });
         await user.save();
         
@@ -34,7 +35,7 @@ exports.login = async(req, res) => {
             return res.status(401).json({ error : "Invalid credentials"});
         }
 
-        const token = jwt.generateToken({ id : user._id, role : user.role });
+        const token = jwt.generateToken({ id : user._id });
         res.json({ token });
     }
     catch(error){

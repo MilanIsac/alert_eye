@@ -1,6 +1,8 @@
 const Alert = require("../models/alert.models");
 const MLClient = require("../services/mlClient.services");
 const notificationService = require("../services/notifications.services");
+const User = require("../models/user.models");
+const Camera = require("../models/camera.models");
 
 exports.createAlert = async (req, res) => {
     try {
@@ -20,11 +22,15 @@ exports.createAlert = async (req, res) => {
         });
         await alert.save();
 
-        await notificationService.sendNotification({
-            message: `Alert: ${disasterType} detected at ${location} with ${probability[disasterType] * 100}% confidence`,
-            recipients: ['official1@example.com'],
-        });
+        const users = await User.find({ phoneNumber : { $exists : true, $ne : null }});
+        const phoneNumbers = users.map(u => u.phoneNumber);
 
+        if(phoneNumbers.length > 0 && probabitlity[disastertype] > 0.7){
+            await notificationService.sendSMS({
+                message: `Disaster Alert : ${disastertype} detected at ${location || camera.location.coordinates}`,
+                recipients : phoneNumbers
+            })
+        }
         res.status(201).json(alert);
     }
     catch(error) {

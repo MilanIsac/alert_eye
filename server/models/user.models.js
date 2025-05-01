@@ -18,9 +18,10 @@ const userSchema = new mongoose.Schema({
         type : String,
         required : true
     },
-    role : {
-        type : String,
-        enum : ["government_official"]
+    phoneNumber : {
+        type : Number,
+        required : true,
+        trim : true
     },
     createdAt : {
         type : Date,

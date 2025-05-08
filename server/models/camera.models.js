@@ -8,29 +8,29 @@ const cameraSchema = new mongoose.Schema({
         trim: true
     },
     location: {
-    type : {
+        type: {
+            type: String,
+            required: true,
+            trim: true
+        },
+        coordinates: {
+            type: [Number],
+            required: true
+        }
+    },
+    rtspURL: {
         type: String,
-        required: true,
-        trim: true
+        required: true
     },
-    coordinates : {
-    type: [Number],
-    required: true
+    status: {
+        type: String,
+        enum: ["active", "inactive"],
+        default: "active"
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
     }
-    },
-    rtspURL : {
-        type : String,
-        required : true
-    },
-    status : {
-        type : String,
-        enum : ["active", "inactive"],
-        default : "active"
-    },
-    createdAt : {
-        type : Date,
-        default : Date.now
-    }
-})
+});
 
 module.exports = mongoose.model("Camera", cameraSchema);

@@ -1,15 +1,16 @@
 const express = require("express");
 const router = express.Router();
-const authController = require("../controllers/auth.controllers.js")
-const jwt = require('../utils/jwt.utils.js');
+const authController = require("../controllers/auth.controllers.js");
 
 // Signup
 router.post("/signup", authController.signup);
 
-// login
-router.post("/signup", authController.login);
+// Login
+router.post("/login", authController.login); // Fixed: /signup → /login
 
-// logout
-// router.post("/signup", authController.logout);
+// Logout (no-op for stateless JWT, just for API completeness)
+router.post("/logout", (req, res) => {
+    res.json({ message: "Logged out successfully" });
+});
 
 module.exports = router;

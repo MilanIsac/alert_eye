@@ -6,7 +6,7 @@ const jwt = require("../utils/jwt.utils");
 // Middleware to verify JWT token
 const authenticate = jwt.verifyToken;
 
-router.post('/streams/start', authenticate, streamController.startStream);
-router.post('/streams/stop', authenticate, streamController.stopStream);
+router.post('/start', authenticate, streamController.startStream);
+router.post('/stop', authenticate, streamController.stopStream);
 
 module.exports = router;

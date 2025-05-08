@@ -1,58 +1,45 @@
 const Camera = require("../models/camera.models");
 const MLClient = require('../services/mlClient.services');
-const { spawn } = require('child_process');
-const ffmpeg = require("../utils/ffmpeg.utils");
+
+const activeStreams = new Map();
 
 exports.startStream = async (req, res) => {
-  try {
-    const { cameraId } = req.body;
-    const camera = await Camera.findById(cameraId);
-    if (!camera) {
-      return res.status(404).json({ error: 'Camera not found' });
+    try {
+        const { cameraId } = req.body;
+        const camera = await Camera.findOne({ cameraId });
+        if (!camera) {
+            return res.status(404).json({ error: 'Camera not found' });
+        }
+
+        const streamUrl = camera.rtspURL;
+        const authToken = req.headers['authorization']?.split(' ')[1]; // Extract token
+
+        if (!authToken) {
+            return res.status(401).json({ error: 'No token provided' });
+        }
+
+        await MLClient.startStream(cameraId, streamUrl, authToken);
+
+        activeStreams.set(cameraId, true);
+
+        res.json({ message: 'Stream started', cameraId });
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to start stream' });
     }
-
-    // Start FFmpeg to process the stream (example)
-    const streamUrl = camera.streamUrl; // Assume Camera model has this field
-    const outputPath = `/tmp/stream_${cameraId}.jpg`; // Temporary image output
-    const ffmpegProcess = spawn('ffmpeg', [
-      '-i', streamUrl,
-      '-vf', 'fps=1', // Capture 1 frame per second
-      '-update', '1',
-      outputPath,
-    ]);
-
-    ffmpegProcess.on('error', (err) => {
-      console.error('FFmpeg error:', err);
-      res.status(500).json({ error: 'Failed to start stream' });
-    });
-
-    ffmpegProcess.on('exit', (code) => {
-      if (code !== 0) console.error('FFmpeg exited with code', code);
-    });
-
-    // Periodically check and predict
-    setInterval(async () => {
-      const prediction = await MLClient.predictDisaster(outputPath);
-      if (prediction.probability[prediction.class] > 0.7) { // Threshold
-        await notificationService.sendNotification({
-          message: `High confidence ${prediction.class} detected on Camera ${cameraId}`,
-          recipients: ['official1@example.com'],
-        });
-      }
-    }, 5000); // Check every 5 seconds
-
-    res.json({ message: 'Stream started', cameraId });
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to start stream' });
-  }
 };
 
 exports.stopStream = async (req, res) => {
-  try {
-    const { cameraId } = req.body;
-    // Logic to stop FFmpeg process (implement based on your setup)
-    res.json({ message: 'Stream stopped', cameraId });
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to stop stream' });
-  }
+    try {
+        const { cameraId } = req.body;
+        if (!activeStreams.has(cameraId)) {
+            return res.status(404).json({ error: 'Stream not found' });
+        }
+
+        await MLClient.stopStream(cameraId);
+        activeStreams.delete(cameraId);
+
+        res.json({ message: 'Stream stopped', cameraId });
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to stop stream' });
+    }
 };
